@@ -89,13 +89,34 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'crop_rvw8',
+#         'USER': 'hari',
+#         'PASSWORD': 'HLOgZY4BoAimoOBICFI7shvUYiws7HUS',
+#         'HOST': 'dpg-d7bt725m5p6s73f605ag-a',
+#         'PORT': '5432',
+#     }
+# }
+
+
+import dj_database_url
+import os
+
+DATABASES = {
+    'default': dj_database_url.parse(
+        "postgresql://crop_pm6t_user:gLgE0KhRhBp9oItFrRvWJlRB4mg6vucB@dpg-d7btekcvjg8s73c5mb00-a.oregon-postgres.render.com/crop_pm6t"
+        
+    )
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
